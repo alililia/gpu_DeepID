@@ -124,15 +124,7 @@ After installing MindSpore, follow these steps:
 
 ## [Training Process](#Contents)
 
-Train on 
 
-```shell
-# train standalone
-bash run_standalone_train_.sh [DEVICE_NUM] [DEVICE_ID]
-
-# train distribute
-bash run_distribute_train.sh [DEVICE_NUM] [DISTRIBUTE] [RANK_TABLE_FILE]
-```
 
 Train on GPU
 
@@ -148,12 +140,7 @@ for example: bash run_distribute_train_gpu.sh 8 0,1,2,3,4,5,6,7 /home/DeepID/dat
 
 ## [Prediction Process](#Contents)
 
-Eval on 
 
-```shell
-# Evaluation on 
-sh eval_.sh [DEVICE_NUM] [DEVICE_ID]
-```
 
 ## [Ascen 310 infer](#contents)
 
@@ -197,32 +184,32 @@ Valid dataset accuracy: 0.9683
 
 ### Training Performance
 
-| Parameters                 |  910                                                  |GPU|
-| -------------------------- | ----------------------------------------------------------- |---|
-| Model Version              | DeepID                                                      |DeepID|
+| Parameters                 | GPU|
+| -------------------------- | ---|
+| Model Version              |DeepID|
 | Resource                   |                                                       |GPU|
-| uploaded Date              | 11/04/2021 (month/day/year)                                 |11/18/2021|
-| MindSpore Version          | 1.3.1                                                       |1.5.0|
-| Dataset                    | Youtube Face                                                |Youtube Face|
-| Training Parameters        | epochs=200, batch_size=1024, lr=0.0001                      |epochs=200, batch_size=2048, lr=0.0001|
-| Optimizer                  | Adam                                                        |Adam|
-| outputs                    | Accuracy = 99.18%                                           |Accuracy = 99.24%|
-| Speed                      | 1pc: 900 ms/step;                                           |1pc: 1250 ms/step 8pc:290 ms/step|
-| Total time                 | 1pc: 3h6s;                                                  |1pc: 4:44:52 8pc:0:50:23|
-| Parameters (M)             | 4.56  M                                                     |4.56  M   |
-| Checkpoint for Fine tuning | 2.03  M (.ckpt file)                                        |2.03  M (.ckpt file)   |
+| uploaded Date              |11/18/2021|
+| MindSpore Version          | 1.5.0|
+| Dataset                    | Youtube Face|
+| Training Parameters        | epochs=200, batch_size=2048, lr=0.0001|
+| Optimizer                  | Adam|
+| outputs                    | Accuracy = 99.24%|
+| Speed                      | 1pc: 1250 ms/step 8pc:290 ms/step|
+| Total time                 | 1pc: 4:44:52 8pc:0:50:23|
+| Parameters (M)             | 4.56  M   |
+| Checkpoint for Fine tuning | 2.03  M (.ckpt file)   |
 
 ### Inference Performance
 
-| Parameters          |  910                      |GPU|
-| ------------------- | ---------------------------     |---|
-| Model Version       | DeepID                          |DeepID|
-| Resource            |                           |GPU|
-| Uploaded Date       | 11/04/2021 (month/day/year)     |11/18/2021|
-| MindSpore Version   | 1.3.1                           |1.5.0|
-| Dataset             | Youtube Face                    |Youtube Face|
-| batch_size          | 512                             |256|
-| outputs             | Accuracy = 96.83%               |Accuracy = 95.05%|
+| Parameters          | GPU|
+| ------------------- | ---|
+| Model Version       | DeepID|
+| Resource            | GPU|
+| Uploaded Date       | 11/18/2021|
+| MindSpore Version   | 1.5.0|
+| Dataset             | Youtube Face|
+| batch_size          | 256|
+| outputs             | Accuracy = 95.05%|
 
 | Parameters          |  310                      |
 | ------------------- | ---------------------------     |
